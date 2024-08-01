@@ -57,7 +57,7 @@ btnHold.addEventListener('click', () => {
       scores[activePlayer];
 
     //2) check if players score >= 100
-    if (scores[activePlayer] >= 10) {
+    if (scores[activePlayer] >= 50) {
       playing = false;
       $.querySelector(`.player--${activePlayer}`).classList.add(
         'player--winner'
@@ -68,7 +68,6 @@ btnHold.addEventListener('click', () => {
       );
       diceEl.classList.add('hiiden');
     } else {
-      
       switchPlayer();
       //switch player
     }
@@ -76,22 +75,20 @@ btnHold.addEventListener('click', () => {
 });
 
 btnNew.addEventListener('click', () => {
- playing = true;
- scores[0]= 0;
- scores[1]= 0;
- currentScore = 0;
- activePlayer = 0 ;
- currentScoreEl0.textContent = 0;
- currentScoreEl1.textContent = 0;
- score0El.textContent = 0;
-score1El.textContent = 0;
-$.querySelector(`.player--${activePlayer}`).classList.remove(
-  'player--winner'
-);
-$.querySelector(`.player--1`).classList.remove(
-  'player--winner'
-);
-player0El.classList.add('player--active');
-player1El.classList.remove('player--active');
-diceEl.classList.add('hiiden');
+  playing = true;
+  scores[0] = 0;
+  scores[1] = 0;
+  currentScore = 0;
+  activePlayer = 0;
+  currentScoreEl0.textContent = 0;
+  currentScoreEl1.textContent = 0;
+  score0El.textContent = 0;
+  score1El.textContent = 0;
+  $.querySelector(`.player--${activePlayer}`).classList.remove(
+    'player--winner'
+  );
+  $.querySelector(`.player--1`).classList.remove('player--winner');
+  player0El.classList.add('player--active');
+  player1El.classList.remove('player--active');
+  diceEl.classList.add('hiiden');
 });
